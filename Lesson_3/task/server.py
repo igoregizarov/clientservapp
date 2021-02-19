@@ -1,12 +1,6 @@
 from socket import AF_INET, socket, SOCK_STREAM
 import time
 import json
-from common.configs import *
-
-
-s = socket(AF_INET, SOCK_STREAM)
-s.bind(('', PORT))
-s.listen(LISTEN)
 
 
 def send_msg_to_client(var):
@@ -25,12 +19,19 @@ def send_msg_to_client(var):
     return msg
 
 
-while True:
-    client, addr = s.accept()
-    data = client.recv(4096)
-    data = data.decode('utf-8')
-    data = json.loads(data)
-    msg = send_msg_to_client(data['action'])
-    msg = json.dumps(msg)
-    client.send(msg.encode('utf-8'))
-    client.close()
+if __name__ == '__main__':
+    from common.configs import *
+
+    s = socket(AF_INET, SOCK_STREAM)
+    s.bind(('', PORT))
+    s.listen(LISTEN)
+
+    while True:
+        client, addr = s.accept()
+        data = client.recv(4096)
+        data = data.decode('utf-8')
+        data = json.loads(data)
+        msg = send_msg_to_client(data['action'])
+        msg = json.dumps(msg)
+        client.send(msg.encode('utf-8'))
+        client.close()
