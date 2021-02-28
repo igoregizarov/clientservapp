@@ -2,3 +2,7 @@ Wed Feb 17 23:02:51 2021 Вызов connect_done: (), {}
 connect_done вернула None
 Wed Feb 17 23:02:51 2021 Вызов send_msg_to_client: ('presence',), {}
 send_msg_to_client вернула {'response': 200, 'alert': 'Connect is done!', 'time': 'Wed Feb 17 23:02:51 2021'}
+Wed Feb 24 19:26:20 2021 Вызов connect_done: (), {}
+connect_done вернула None
+Wed Feb 24 19:26:20 2021 Вызов send_msg_to_client: ('presence',), {}
+send_msg_to_client вернула {'response': 200, 'alert': 'Connect is done!', 'time': 'Wed Feb 24 19:26:20 2021'}
